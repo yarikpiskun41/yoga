@@ -1,0 +1,1040 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #555;
+}
+
+.page-wrapper {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;  
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;  
+}
+
+/*Хедер страницы*/
+
+.page-header {
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.15);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+}
+
+.page-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    padding: 15px 15px;
+}
+
+.opener {
+        display: block;
+        text-decoration: none;
+        width: 30px;
+        height: 25px;
+        position: relative;
+        padding: 0;
+        border:none;
+        background-color: transparent;
+  }
+
+  .opener:before, 
+  .opener:after,
+  .opener span {
+        height: 3px;
+        background-color: #5363db;
+        position: absolute;
+        left:0;
+        right: 0;
+   }
+
+  .opener span {
+        top:50%;
+        transform: translateY(-50%);
+  }
+  .opener:before {
+        content: "";
+        top:0;
+  }
+  .opener:after {
+        content: "";
+        bottom:0;
+  }
+
+  .nav-menu {
+      position: absolute;
+      width: 100%;
+      top: -150%;
+      left: 0;
+      background-color: transparent;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      font-weight: 700;
+      text-align: center;
+      transition: top 0.5s ease-in-out, background-color 0.7s ease;
+    }
+
+
+  
+  .nav-menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-menu li {
+        padding: 15px 0;
+    }
+
+.nav-menu a {
+        text-decoration: none;
+        color: #555555;
+        display: none;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+        color: #5b6ceb;
+    }
+
+
+    .nav-menu a:before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        right: 50%;
+        width: 0;
+        height: 2px;
+        background-color: #5b6ceb;
+        margin: 0 auto;
+        transition: left 0.3s ease, right 0.3s ease, width 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-menu a:hover:before {   
+        left: 0;
+        right: 0;
+        width: 50%;
+    }
+
+
+.nav-active .nav-menu {
+    display: block;
+    background-color: #fff;
+    top: 100%;
+}
+
+.nav-active .nav-menu li {
+    border-bottom: 1px solid rgba(143, 147, 173, 0.55);
+}
+
+.nav-active .nav-menu:first-child {
+    border-top: 1px solid rgba(143, 147, 173, 0.55);
+}
+
+.nav-active .nav-menu :last-child {
+    border: 0
+}
+
+.nav-active .nav-menu a {
+    display: inline;
+}
+
+.nav-active .opener span{
+    background-color: transparent;
+    transform: scale(0);
+}
+
+.nav-active .opener::before {
+    transform: rotateZ(45deg);
+    top: 11px;  
+}
+
+.nav-active .opener::after {
+    transform: rotateZ(-45deg);
+    bottom: 11px;  
+}
+
+
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+}
+
+.background {
+    background-repeat: no-repeat; 
+    background-position: center top; 
+    background-size: cover;
+}
+
+/*Главная страница*/
+
+.registration-page {
+    margin-top: 0;
+    position: relative;
+    padding: 140px 15px 65px;
+    z-index: 1;
+}
+
+.registration-page::before {
+    content: "";
+    position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+    background-color: #5363db;
+    opacity: 0.8;
+    z-index:-1;
+}
+
+/*Форма главной страницы*/
+
+.trial-class-form {
+    background-color: #fff;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.15);
+    padding: 40px 30px 35px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.trial-class-form h2 {
+    font-size: 26px;
+    margin: 0;
+    margin-bottom: 30px;
+    color: #5363db;
+}
+
+.trial-class-form input,
+.trial-class-form select {
+    min-height: 50px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    border: 0;
+}
+
+.trial-class-form input::placeholder,
+.trial-class-form select{
+    color: #888;
+}
+
+.trial-class-form input {
+    margin-bottom: 20px;
+}
+
+.trial-class-form select {
+    margin-bottom: 30px;
+}
+
+.trial-class-form input[type="submit"] {
+    background-color: #5b6ceb;
+    color: #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    margin-left: 60px;
+}
+
+/*Заголовок главной страницы*/
+
+.page-title {
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    max-width: 215px;
+}
+
+.subtitle {
+    color: #777;
+    font-size: 2.929rem;
+    font-weight: 400;
+    font-family: "Freestyle Script", sans-serif;
+}
+
+.page-title .subtitle {
+    font-size: 2.286rem;
+    color: #fff
+}
+
+/*Программы йоги*/
+
+.yoga-features-title {
+    text-align: center;
+}
+
+.yoga-features-title h2 {
+    color: #5b6ceb;
+    margin: 40px auto 15px;
+}
+
+.yoga-cards-holder {
+    padding: 15px 15px 30px;
+}
+
+.yoga-card{
+    border-radius: 20px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+
+.yoga-card-img {
+    height: 100%;
+    
+    width: 100%;
+}
+
+
+.yoga-card-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.yoga-card-text {
+    margin: 33px 33px 33px;
+}
+
+.yoga-type {
+    color: #999;
+}
+
+/*Куча фоток*/
+
+.photos-holder{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.yoga-photo {
+    position: relative;
+    width: 50%;
+}
+
+.yoga-photo img{
+    width: 100%;
+    height: 100%;
+}
+
+.yoga-photo::before {
+    content: "";
+    background-color: rgba(91, 108, 235, 0.8);
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease
+}
+
+.yoga-photo:hover::before {
+    opacity: 1;
+}
+
+.slider-img img {
+    width: 100%;
+    height: 100%;
+}
+
+/*"Про нас" и слик*/
+
+#about-us {
+    padding: 20px 20px 50px 15px;
+    line-height: 1.572;
+}
+
+#about-us h2 {
+    color: #5b6ceb;;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.slider {
+    margin: 40px 20px 0;
+}
+
+.slick-next, .slick-prev{
+    margin: 0;
+    width: 20%;
+    height: 40%;
+    top: 30%;
+    left: -10%; 
+    border: 1px solid transparent;
+    color: transparent;
+    font-size: 0;
+    background-color: transparent;
+    position: absolute;
+    display: block !important;
+    z-index: 1;
+}
+
+.slick-next {
+    left: 90%
+}
+
+.slick-next::after, .slick-prev::after{
+    content: ">";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5b6ceb;
+    box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.1);
+    font-weight: 900;
+    font-size: 2rem;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    margin: 0;
+    background: white;
+    position: absolute;
+    z-index: 2;
+}
+
+.slick-prev::after{
+    content: "<";
+}
+
+/*Полезности йоги*/
+
+.healthfull-yoga-page {
+    position: relative;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.688;
+    z-index: 1;
+    text-align: center;
+    padding: 50px 20px 30px 25px;
+}
+
+.healthfull-yoga-page h3 {
+    width: 70%;
+    font-size: 18px;
+    margin: 30px auto;
+}
+
+.healtfull-container {
+    margin-bottom: 30px;
+}
+
+.healthfull-logo {
+    margin: 0 auto;
+    border: 2px solid #fff;
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+}
+
+.healthfull-logo img {
+    object-fit: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.healthfull-yoga-page::before {
+    content: "";
+    position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+    background-color: #5363db;
+    opacity: 0.7;
+    z-index:-1;
+}
+
+
+/*3 картчки выборов курсов*/
+
+.price-cards-holder {
+    padding: 65px 15px 40px;
+}
+
+.price-card {
+    text-transform: uppercase;
+    background-color: #fff;
+    box-shadow: 6px 6px 50px rgba(0, 0, 0, 0.1);
+    border-radius: 17px;
+    font-size: 18px;
+    line-height: 1.334;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.price-holder {
+    padding: 10px 55px 15px;
+    color: #fff;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    text-align: center;
+    width: 100%;
+    font-size: 67px;
+    font-weight: 700;
+    background-color: #5b6ceb;
+}
+
+.price-holder p {
+    margin: 0 auto;
+}
+
+.dollar-symbol {
+    font-size: 32px;
+    vertical-align: middle;
+    margin-right: 1rem;
+}
+
+.per-month {
+    font-size: 18px;
+}
+
+
+.description-holder {
+    flex-grow: 1;
+}
+
+.description-list {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.description-list li {
+    text-align: center;
+    position: relative;
+    margin: 50px auto;
+}
+
+.description-holder li::after {
+    content: "";
+    position: absolute;
+    background-color: #999;
+    height: 1px;
+    width: 25%;
+    left: 37.5%;
+    bottom: -25px;
+}
+
+.description-holder li:last-child::after {
+    background-color: transparent;
+}
+
+
+.buy-trial-btn {
+    font-size: 18px;
+    padding: 20px 50px;
+    text-decoration: none;
+    text-transform: none;
+    color: #fff;
+    margin: 0  auto;
+    margin-bottom: 50px;
+    display: block;
+    border-radius: 20px;
+    background-color: #5b6ceb;
+}
+
+
+/*Футер и его составляющие*/
+
+.footer {
+    background-color: #5a6cea;
+    color: #fff;
+    padding: 35px 15px;
+}
+
+.footer h3 {
+    margin-top: 0;
+}
+
+.socials-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 21px;
+}
+
+.socials-list a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.contact-list li {
+    margin: 15px auto;
+}
+
+.contact-list a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.icon-location::before,
+.icon-envelope::before,
+.icon-call::before,
+.icon-planet::before {
+    margin-right: 15px;
+}
+
+.icon-call {
+    display: flex;
+    align-items: center;
+    
+}
+
+.socials-list li a,
+.contact-list li a {
+    transition: color 0.3s ease;
+}
+
+.socials-list li a:hover,
+.contact-list li a:hover {
+    color: #7e247f;
+    text-decoration: underline;
+}
+
+.subfooter {
+    margin: 0;
+    padding-top: 22px;
+    padding-bottom: 20px;
+    background-color: #5363d8;
+    color: #b7bffc;
+    font-size: 12px;
+    line-height: 22px;
+    font-family: "Myriad Pro", sans-serif;
+    text-align: center;
+}
+
+
+/*Медиа запросы(адаптивная верстка)*/
+
+@media(min-width:440px) {
+    .slick-next, .slick-prev{
+        width: 10%;
+        height: 20%;
+        top: 40%;
+        left: -5%; 
+    }
+
+    .slick-next {
+        left: 95%;
+    }
+}
+
+@media(min-width:574px) {
+    
+    .price-cards-holder .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .price-card {
+        width: 60%;
+    }
+    
+}
+
+@media(min-width:700px) {
+    .registration-page .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .trial-class-form {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .page-title {
+        margin: 0;
+        text-align: left;
+    }
+
+    .registration-page.page-title h1 {
+        font-size: 48px;
+        line-height: 1.5;
+        font-weight: 700;
+    }
+
+    .registration-page.subtitle {
+        font-size: 40px;
+    }
+
+    .trial-class-form{
+        width: 300px;
+        margin-right: 90px;
+    }
+
+    .yoga-card {
+        padding-bottom: 0;
+        margin-right: 15px;
+        margin-left: 15px;
+        display: flex;
+    }
+
+    .yoga-card-img {
+        width: 50%;
+    }
+    
+    .yoga-card-text {
+        width: 50%;
+    }
+
+
+
+    .healthfull-yoga-page {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    .healthfull-yoga-page::before {
+        opacity: 0.9;   
+    }
+
+    .healthfull-yoga-page h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 50%;
+    }
+
+    .healtfull-container {
+        width: calc(50% - 35px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .healthfull-logo {
+        margin-bottom: 25px;
+    } 
+
+    .helthfull-text {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+
+    
+}
+
+@media(min-width:844px) {
+
+    .slick-next, .slick-prev{
+        width: 5%;
+        height: 10%;
+        top: 45%;
+        left: -2.5%; 
+    }
+
+    .slick-next {
+        left: 97.5%;
+    }
+
+    .footer .container{
+        display: flex;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer h3 {
+        margin-top: 65px;
+        margin-bottom: 60px;
+    }
+
+    .about-footer {
+        width: 50%;
+        margin-right: 140px;
+    }
+
+    .socials-list {
+        margin-top: 75px;
+        margin-top: 65px;
+        justify-content: left;
+    }
+
+    .socials-list li {
+        margin-right: 20px;
+    }
+
+    .contact-footer {
+        text-align: left;
+        width: 50%;
+      
+    }
+
+    .contact-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+
+    .contact-list li:nth-child(2n) {
+        text-align: right;
+    }
+
+    .contact-list li{
+        width: 50%;
+        margin-top: 0;
+    }
+
+
+    .subfooter {
+        font-size: 16px;
+    }
+
+}
+
+@media(min-width:1023px) {
+    .page-header .container {
+        max-width: 1400px;
+        padding-left: 115px;
+        padding-right: 115px;
+    }
+
+    .opener {
+        display: none;
+    }
+
+    .nav-menu {
+        position: static;
+        background-color: #fff;
+    }
+
+    .nav-menu ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .nav-menu li {
+        margin-right: 50px;
+    }
+
+    .nav-menu a{
+        display: inline;
+    }
+
+   
+    .yoga-features-title {
+        margin-top: 125px;
+        margin-bottom: 75px;
+    }
+
+    .yoga-cards-holder {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        margin-bottom: 215px;
+        padding-right:0;
+        margin-right: -15px;
+    }
+
+
+    .yoga-card {
+        width: calc(50% - 30px);
+        margin-left: 0;
+    }
+
+    .yoga-photo {
+        width: 25%;
+    }
+
+
+    #about-us {
+        padding: 180px 115px;
+        display: flex;
+        align-items: center;
+    }
+
+    .about-us-text {
+        width: 50%;
+        margin-right: 145px;
+    }
+
+    .slider {
+        width: 50%;
+    }
+
+    .slick-next, .slick-prev{
+        width: 10%;
+        height: 20%;
+        top: 40%;
+        left: -5%; 
+    }
+
+    .slick-next {
+        left: 95%;
+    }
+
+    .healthfull-yoga-page {
+        padding: 125px 115px 136px 115px;
+        justify-content: unset;
+    }
+
+    .healthfull-yoga-page::before {
+        opacity: 1;
+        
+    }
+
+    .healtfull-container {
+        margin-right: 35px;
+        width: calc(25% - 35px);
+    }
+
+    .price-cards-holder {
+        margin-right: -35px;
+    }
+
+    .price-cards-holder .container{
+        margin: 0 auto;
+        flex-wrap: wrap;
+        align-items: stretch;
+        flex-direction: row;
+    }
+    
+    .price-card {
+        width: calc(33% - 30px);
+        margin-right: 30px;
+    }
+
+    
+}    
+
+
+/*Подключение шрифтов и иконок*/
+ 
+@font-face {
+    font-family: 'FREESCPT';
+    src: url('fonts/freescpt/FREESCPT.eot');
+    src: url('fonts/freescpt/FREESCPT.eot') format('embedded-opentype'),
+         url('fonts/freescpt/FREESCPT.woff2') format('woff2'),
+         url('fonts/freescpt/FREESCPT.woff') format('woff'),
+         url('fonts/freescpt/FREESCPT.ttf') format('truetype'),
+         url('fonts/freescpt/FREESCPT.svg#FREESCPT') format('svg');
+}
+
+@font-face {
+    font-family: "MyriadProRegular";
+    src: url("fonts/MyriadProRegular/MyriadProRegular.eot");
+    src: url("fonts/MyriadProRegular/MyriadProRegular.eot?#iefix")format("embedded-opentype"),
+    url("fonts/MyriadProRegular/MyriadProRegular.woff") format("woff"),
+    url("fonts/MyriadProRegular/MyriadProRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon/fonts/icomoon.eot?gbdhgo');
+    src:  url('fonts/icomoon/fonts/icomoon.eot?gbdhgo#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon/fonts/icomoon.ttf?gbdhgo') format('truetype'),
+      url('../fonts/icomoon/fonts/icomoon.woff?gbdhgo') format('woff'),
+      url('../fonts/icomoon/fonts/icomoon.svg?gbdhgo#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-call:before {
+    content: "\e900";
+  }
+  .icon-envelope:before {
+    content: "\e901";
+  }
+  .icon-facebook:before {
+    content: "\e902";
+  }
+  .icon-google-plus:before {
+    content: "\e903";
+  }
+  .icon-instagram:before {
+    content: "\e904";
+  }
+  .icon-location:before {
+    content: "\e905";
+  }
+  .icon-pinterest:before {
+    content: "\e906";
+  }
+  .icon-planet:before {
+    content: "\e907";
+  }
+  .icon-twitter:before {
+    content: "\e908";
+  }
+  .icon-search:before {
+    content: "\f002";
+  }
+  .icon-angle-left:before {
+    content: "\f104";
+  }
+  .icon-angle-right:before {
+    content: "\f105";
+  }
+  .icon-angle-up:before {
+    content: "\f106";
+  }
+  .icon-angle-down:before {
+    content: "\f107";
+  }
+  
+
